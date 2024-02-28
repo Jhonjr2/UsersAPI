@@ -14,6 +14,7 @@ const User = sequelize.define('user', {
     donacion: {
         type: DataTypes.STRING,
         allowNull: false
+        
     },
   
 });
