@@ -7,13 +7,11 @@ const getAll = catchError(async(req, res) => {
 });
 
 const create = catchError(async(req, res) => {
-    const {first_name, last_name, email, password, birthday} = req.body
+    const {first_name, last_name, donacion} = req.body
     const users = await User.create({
         first_name,
         last_name,
-        email,
-        password,
-        birthday
+        donacion,
     })
     return res.status(201).json(users)
 })
@@ -32,13 +30,11 @@ const remove = catchError(async(req, res) => {
 
 const update = catchError(async(req, res) => {
     const { id } = req.params
-    const {first_name, last_name, email, password, birthday} = req.body
+    const {first_name, last_name, donacion} = req.body
     const user = await User.update({
         first_name,
         last_name,
-        email,
-        password,
-        birthday
+        donacion
     }, {where: {id: id}, returning: true})
     return res.json(user[1][0])
 })
