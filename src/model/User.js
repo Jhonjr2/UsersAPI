@@ -10,11 +10,12 @@ const User = sequelize.define('user', {
     last_name: {
         type: DataTypes.STRING,
         allowNull: false
-        
+
     },
-    donacion: {
+    Aportes: {
         type: DataTypes.STRING,
     },
+
   
 });
 
